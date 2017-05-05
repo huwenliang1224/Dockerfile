@@ -1,0 +1,25 @@
+To add a worker to this swarm, run the following command:
+
+docker swarm join --token SWMTKN-1-1ogdkhqw053y7u2i8chejpcq2531umf4sdsg7xovx3ljqhm3jh-drftmmi2nhmq7goyhvykrb2h2 192.168.234.55:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+
+
+docker swarm init --advertise-addr 192.168.234.55
+
+docker swarm join --token SWMTKN-1-1ogdkhqw053y7u2i8chejpcq2531umf4sdsg7xovx3ljqhm3jh-drftmmi2nhmq7goyhvykrb2h2 192.168.234.55:2377
+docker swarm join --token SWMTKN-1-1ogdkhqw053y7u2i8chejpcq2531umf4sdsg7xovx3ljqhm3jh-drftmmi2nhmq7goyhvykrb2h2 192.168.234.55:2377
+
+docker info
+
+docker node ls
+
+docker service create --replicas 1 --name web hwl/web
+
+docker service create --name my_web --replicas 3 --mount type=bind,src=/mnt/logs,dst=/mnt/logs --publish 8080:8080 web:3.0
+
+docker service create --name my_web --replicas 3 --publish 8080:8080 web:3.0
+
+4de3bfef-c7ad-45f1-902a-25d813a0afa8:Tue May 02 09:49:03 UTC 2017
+571a9ccd-56b0-4c88-9470-777f4283f3a1:Tue May 02 09:49:11 UTC 2017
